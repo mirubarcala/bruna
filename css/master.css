@@ -79,11 +79,12 @@ li a:hover {
     color: rgb(111,110,114,0.5);
   }
   
-  @media screen and (max-width: 600px) {
-    .topnav a:not(:first-child) {display: none;}
-    .topnav a.icon {
-      float: right;
-      display: block;
+  @media only screen and (max-width: 800px) {
+    .navbarright {
+      display: none
+    }
+    .icon-bar {
+      display: none
     }
   }
 
