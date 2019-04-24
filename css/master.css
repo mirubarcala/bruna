@@ -79,14 +79,22 @@ li a:hover {
     color: rgb(111,110,114,0.5);
   }
   
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1000px) {
     .navbarright {
       display: none
     }
     .icon-bar {
       display: none
     }
+    #carouselExampleIndicators {
+      display: none
+    }
+
+    #contacto {
+      margin-top: 60px;
+    }
   }
+
 
   /*Footer*/
 
