@@ -64,23 +64,23 @@ li a:hover {
 /* FAQs */
 
 .principal-g {
-    text-align: center;
+   
     color: grey;
 
 
 }
-.container-g {
+/*.container-g {
     max-width: 1400px;
     display: flex;
     justify-content: space-around;
 
 
-    }
+    }*/
 .titulo-faqs {
-    font-size: 1.5em;
+    font-size: 2em;
     margin: 1em;
 }
-.seccion1 {
+/*.seccion1 {
   width: 80%;
       }
 
@@ -111,19 +111,19 @@ h2 .btn:hover {
 }
 .lineh-g {
     width: 60%;
-}
+}*/
 
 .endfaqs {
-    font-size: 1em;
+    font-size: 2em;
     font-weight: bold;
     margin: 1em;
 }
-.button-g {
+/*.button-g {
     font-size: 1em;
     width: 40%;
     color: white;
     background-color: grey;
-}
+}*/
 
   /*Footer*/
 
