@@ -80,7 +80,11 @@ li a:hover {
   }
   
 <<<<<<< HEAD
+<<<<<<< HEAD
   @media only screen and (max-width: 800px) {
+=======
+  @media only screen and (max-width: 1000px) {
+>>>>>>> 906678781e0443b08280f1503559f8079c5e965f
 =======
   @media only screen and (max-width: 1000px) {
 >>>>>>> 906678781e0443b08280f1503559f8079c5e965f
@@ -91,9 +95,12 @@ li a:hover {
       display: none
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
   }
 
 =======
+=======
+>>>>>>> 906678781e0443b08280f1503559f8079c5e965f
     #carouselExampleIndicators {
       display: none
     }
@@ -104,6 +111,9 @@ li a:hover {
   }
 
 
+<<<<<<< HEAD
+>>>>>>> 906678781e0443b08280f1503559f8079c5e965f
+=======
 >>>>>>> 906678781e0443b08280f1503559f8079c5e965f
   /*Footer*/
 
