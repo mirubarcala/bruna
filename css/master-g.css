@@ -1,0 +1,173 @@
+
+/*Navbar*/
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid #F2F2F2;
+    padding: 2em 0;
+}
+
+.logo img {
+    width: 55%;    
+    padding-left: 3em;
+}
+
+nav {
+    margin: 1em 0 0;
+}
+
+header ul li {
+    display: inline;
+    padding: 0 1em 0 0;
+    font-size: 0.8em;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: rgb(111,110,114);
+    padding-left: 14px;
+}
+
+li a.active {
+    color: rgb(111,110,114);
+    border-bottom: 2px solid rgb(111,110,114);
+    font-weight: 300;
+}
+
+li a:hover {
+    color: #B6B6B6;
+}
+
+.icon-bar {
+   justify-content: center;
+}
+ 
+.icon-bar a i {
+    
+    width: 10%;
+    padding: 16px;
+    padding-left: 12px;
+    color:rgb(111,110,114);
+    font-size: 1.5em;
+  }
+  
+  .icon-bar i:hover {
+    color: rgb(111,110,114,0.5);
+  }
+  
+
+
+/* FAQs */
+
+.principal-g {
+    text-align: center;
+    color: grey;
+
+
+}
+.container-g {
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-around;
+
+
+    }
+.titulo-faqs {
+    font-size: 1.5em;
+    margin: 1em;
+}
+.seccion1 {
+  width: 80%;
+      }
+
+.ask {
+    padding: 0;
+    }
+.card-header {
+    background-color: white;
+    padding: 10px;
+}
+.:hover {
+text-decoration: none;
+filter: sepia(60%);
+}
+
+h2 .btn {
+    color: grey;
+    font-size: 0.5em;
+  }
+h2 .btn:hover {
+        filter: sepia(60%);
+    }
+
+.pie {
+    justify-content: baseline;
+    height: 10%;
+
+}
+.lineh-g {
+    width: 60%;
+}
+
+.endfaqs {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 1em;
+}
+.button-g {
+    font-size: 1em;
+    width: 40%;
+    color: white;
+    background-color: grey;
+}
+
+  /*Footer*/
+
+
+  .container-fluid{
+    font-family: 'Montserrat', sans-serif;
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-align: left;
+    
+}
+
+.row h5{
+    color:rgb(111,110,114);
+    font-size: 0.9em;
+
+}
+
+.row a{
+    text-decoration: none;
+    color: rgb(111,110,114,0.9);
+    font-size: 0.7em;
+    font-weight: 100;
+
+}
+
+.row p{
+    text-decoration: none;
+    color: rgb(111,110,114,0.9);
+    font-size: 0.7em;
+    font-weight: 100;
+}
+
+.row a:hover{
+    color: rgb(111,110,114);
+    border-bottom: 0.1em solid rgb(111,110,114);
+}
+
+.footer-copyright{
+    background-color: rgb(111,110,114); 
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 0.6em;
+}
