@@ -79,42 +79,15 @@ li a:hover {
     color: rgb(111,110,114,0.5);
   }
   
-<<<<<<< HEAD
-<<<<<<< HEAD
   @media only screen and (max-width: 800px) {
-=======
-  @media only screen and (max-width: 1000px) {
->>>>>>> 906678781e0443b08280f1503559f8079c5e965f
-=======
-  @media only screen and (max-width: 1000px) {
->>>>>>> 906678781e0443b08280f1503559f8079c5e965f
     .navbarright {
       display: none
     }
     .icon-bar {
       display: none
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
   }
 
-=======
-=======
->>>>>>> 906678781e0443b08280f1503559f8079c5e965f
-    #carouselExampleIndicators {
-      display: none
-    }
-
-    #contacto {
-      margin-top: 60px;
-    }
-  }
-
-
-<<<<<<< HEAD
->>>>>>> 906678781e0443b08280f1503559f8079c5e965f
-=======
->>>>>>> 906678781e0443b08280f1503559f8079c5e965f
   /*Footer*/
 
 
