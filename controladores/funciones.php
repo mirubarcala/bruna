@@ -66,7 +66,7 @@ function armarRegistro($datos){
     $usuario = [
         "nombre"=>$datos["nombre"],
         "email"=>$datos["email"],
-        "telefono"=>$telefono["telefono"],
+        "telefono"=>$datos["telefono"],
         "password"=> password_hash($datos["password"],PASSWORD_DEFAULT),
         "perfil"=>1
     ];
@@ -78,11 +78,11 @@ function guardarUsuario($usuario){
     file_put_contents('usuarios.json',$jsusuario. PHP_EOL, FILE_APPEND);
 }
 
-function guardarTelefono($telefono){
+/* function guardarTelefono($telefono){
     $jsusuario = json_encode($telefono);
     file_put_contents('usuarios.json',$jsusuario. PHP_EOL, FILE_APPEND);
 }
-
+ */
 
 function buscarEmail($email){
     $baseDatosUsuarios = abrirBaseDatos();
