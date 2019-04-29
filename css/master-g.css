@@ -65,50 +65,39 @@ li a:hover {
 
 .principal-g {
     text-align: center;
-    color: grey;
-
-
+    font-size: 1em;
+    color: rgb(161, 159, 159);
+   
 }
-.container-g {
-    max-width: 1400px;
-    display: flex;
-    justify-content: space-around;
 
-
-    }
 .titulo-faqs {
-    font-size: 1.5em;
+    font-size: 1em;
     margin: 1em;
+    color: grey;
 }
+
+.container-g {
+    display: flex;
+    justify-content: center;
+}
+
 .seccion1 {
-  width: 80%;
-      }
+    display: flex;
+    width: 40%;
+    max-width: 1400px;
+    justify-content: center;
+}
 
 .ask {
-    padding: 0;
-    }
-.card-header {
-    background-color: white;
-    padding: 10px;
+   text-align: left;
+   padding: 0.70em;
 }
-.:hover {
-text-decoration: none;
-filter: sepia(60%);
-}
-
-h2 .btn {
-    color: grey;
-    font-size: 0.5em;
-  }
-h2 .btn:hover {
-        filter: sepia(60%);
-    }
 
 .pie {
     justify-content: baseline;
     height: 10%;
-
 }
+
 .lineh-g {
     width: 60%;
 }
@@ -118,12 +107,15 @@ h2 .btn:hover {
     font-weight: bold;
     margin: 1em;
 }
+
+
 .button-g {
     font-size: 1em;
     width: 40%;
     color: white;
     background-color: grey;
 }
+
 
   /*Footer*/
 
