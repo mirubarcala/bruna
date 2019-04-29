@@ -67,25 +67,30 @@ li a:hover {
     text-align: center;
     font-size: 1em;
     color: rgb(161, 159, 159);
-    max-width: 1400px;
+   
 }
 
 .titulo-faqs {
-    font-size: 1.5em;
+    font-size: 1em;
     margin: 1em;
     color: grey;
 }
 
+.container-g {
+    display: flex;
+    justify-content: center;
+}
+
 .seccion1 {
-    width: 60%;
-    
-   
-    
+    display: flex;
+    width: 40%;
+    max-width: 1400px;
+    justify-content: center;
 }
 
 .ask {
    text-align: left;
-    padding: 0.70em;
+   padding: 0.70em;
 }
 
 .pie {
