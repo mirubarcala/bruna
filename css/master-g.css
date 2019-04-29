@@ -64,66 +64,52 @@ li a:hover {
 /* FAQs */
 
 .principal-g {
-   
-    color: grey;
-
-
-}
-/*.container-g {
+    text-align: center;
+    font-size: 1em;
+    color: rgb(161, 159, 159);
     max-width: 1400px;
-    display: flex;
-    justify-content: space-around;
-
-
-    }*/
-.titulo-faqs {
-    font-size: 2em;
-    margin: 1em;
 }
-/*.seccion1 {
-  width: 80%;
-      }
+
+.titulo-faqs {
+    font-size: 1.5em;
+    margin: 1em;
+    color: grey;
+}
+
+.seccion1 {
+    width: 60%;
+    
+   
+    
+}
 
 .ask {
-    padding: 0;
-    }
-.card-header {
-    background-color: white;
-    padding: 10px;
+   text-align: left;
+    padding: 0.70em;
 }
-.:hover {
-text-decoration: none;
-filter: sepia(60%);
-}
-
-h2 .btn {
-    color: grey;
-    font-size: 0.5em;
-  }
-h2 .btn:hover {
-        filter: sepia(60%);
-    }
 
 .pie {
     justify-content: baseline;
     height: 10%;
-
 }
+
 .lineh-g {
     width: 60%;
-}*/
+}
 
 .endfaqs {
-    font-size: 2em;
+    font-size: 1em;
     font-weight: bold;
     margin: 1em;
 }
-/*.button-g {
+
+
+.button-g {
     font-size: 1em;
     width: 40%;
     color: white;
     background-color: grey;
-}*/
+}
 
   /*Footer*/
 
