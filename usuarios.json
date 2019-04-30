@@ -2,3 +2,4 @@ null
 null
 {"nombre":"hola","email":"hola@hola.com","telefono":null,"password":"$2y$10$w8WM3kLttfJPTMKdsguIKuo6xWTpSzGvEZWVqaJ\/DpTIM0bteKR.W","perfil":1}
 {"nombre":"mariana","email":"mariana@gmail.com","telefono":"12345678","password":"$2y$10$SHtRWPE7rLRpTkXFHtADuuNlKv\/QyNZMA34WVUCrLSVxd2.Malr0.","perfil":1}
+{"nombre":"mariana","email":"mariana@gmail.com","telefono":"123456789","password":"$2y$10$.xsTh7UPdlmN6WGfB2oi\/uzmgn9am3uxArpTtFWtt1PwjPo8lXmR2","perfil":1}

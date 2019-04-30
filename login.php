@@ -12,6 +12,7 @@ if($_POST){
         $errores["password"]= "Datos incorrectos";
       }
     }
+
     crearSesion($usuario,$_POST);
     if (validarUsuario()){
       header("location: home.php");
@@ -77,7 +78,7 @@ if($_POST){
 
     <main>
             <div id="faqs" class="login-form">
-                    <form action="/examples/actions/confirmation.php" method="post">
+                    <form action="" method="post">
                         <div class="avatar">
                             <img src="img/User-Profile.png" alt="Avatar">
                         </div>
@@ -86,7 +87,7 @@ if($_POST){
                             <input type="text" class="form-control" name="email" placeholder="Email" required="required">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" name="contraseña" placeholder="Contraseña" required="required">
+                            <input type="password" class="form-control" name="password" placeholder="Contraseña" required="required">
                         </div>        
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-lg btn-block">Logeate</button>

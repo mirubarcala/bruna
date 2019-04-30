@@ -7,7 +7,7 @@ if ($_POST){
   if(count($errores)==0){
     $registro = armarRegistro($_POST);
     guardarUsuario($registro);
-    header("location:login.php");
+    header("location:login.php")
     exit;
   }
 }
