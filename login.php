@@ -2,8 +2,8 @@
 include_once("controladores/funciones.php");
 if($_POST){
   
-  $errores = validar($_POST);
-  if(count($errores)===0){
+  /*$errores = validar($_POST);
+  if(count($errores)===0){*/
     $usuario = buscarEmail($_POST["email"]);
     if($usuario ==null){
       $errores["email"]="Usted no esta registrado";
@@ -20,7 +20,7 @@ if($_POST){
       header("location: registro.php");
     }  
   }
-}
+
 ?>
 
 <!DOCTYPE html>

@@ -3,3 +3,5 @@ null
 {"nombre":"hola","email":"hola@hola.com","telefono":null,"password":"$2y$10$w8WM3kLttfJPTMKdsguIKuo6xWTpSzGvEZWVqaJ\/DpTIM0bteKR.W","perfil":1}
 {"nombre":"mariana","email":"mariana@gmail.com","telefono":"12345678","password":"$2y$10$SHtRWPE7rLRpTkXFHtADuuNlKv\/QyNZMA34WVUCrLSVxd2.Malr0.","perfil":1}
 {"nombre":"mariana","email":"mariana@gmail.com","telefono":"123456789","password":"$2y$10$.xsTh7UPdlmN6WGfB2oi\/uzmgn9am3uxArpTtFWtt1PwjPo8lXmR2","perfil":1}
+{"nombre":"Gabriela","email":"gkr1110@gmail.com","telefono":"11111111","password":"$2y$10$t40\/0nPYkLJ5WPArze573.U4F47sERE17w3J4R3v6ygwOT6yxFKVC","perfil":1}
+{"nombre":"Jorge","email":"jj@gmail.com","telefono":"11111111","password":"$2y$10$Pg4PAlVbBSnv5Kli09VoSehjIM6X6OYJnxml2lm3fqDuVSAk5eaBy","perfil":1}
