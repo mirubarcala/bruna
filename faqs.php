@@ -1,56 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>BRUNA</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    <script src="main.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/master-g.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <style>
-  #more {display: none;}
-  </style>
-
-</head>
+<?php require 'head.php'; ?>
 <body>
-  <header>
-    <section class="container">
-                
-        <section class="navbarright">
-            <article class="col-12 col-md-12 col-lg-12">
-                <nav>
-                     <ul>
-                        <li>
-                            <a href="home.php">HOME</a>
-                            <a href="#">PRODUCTOS</a>
-                            <a href="#">NOSOTROS</a>
-                            <a href="#">CONTACTO</a>
-                        </li>
-                    </ul>
-                </nav>
-            </article>
-        </section>
-                    
-        
-        <section class="logo">
-            <a href=""><img src="img/BRUNA.png"></a>
-        </section>
-        
-        
-        <section class="icon-bar">
-            <article class="col-12 col-md-12 col-lg-12">
-                <a href="#"><i class="fa fa-heart"></i></a>
-                <a href="#"><i class="fa fa-search"></i></a> 
-                <a href="#"><i class="fa fa-shopping-cart"></i></a> 
-                <a href="login.php"><i class="fa fa-user"></i></a> 
-                            
-            </article>
-        </section>
-        
+
+<header>
+<?php require 'navbar.php'; ?>	
 </header>
 
 
@@ -59,6 +13,7 @@
         <h1 class="titulo-faqs">BIENVENIDO AL FAQs DE BRÛNA</h1>
           <div class="container-g">
             <div class="seccion1 row">
+
                 <div class="card-body ask col-xs-12 col-md-6 col-lg-6 ">
                   <h5 class="card-title icon-g"><img src="img/question.png" alt=""></h5>
                   <h6 class="card-subtitle mb-2 text-muted titleask"> Cuál es el plazo de entrega ?</h6>
@@ -114,7 +69,7 @@
                   <a onclick="myFunction()" id="myBtn">Ver más</a>
                 </div>
             </div>
-            </div>
+          </div>
 
 
                 <div class="pie">
@@ -124,69 +79,9 @@
                   <button type="button" class="button-g">CONTACTATE CON NOSOTROS</button>
                 </div>
 
-
-
-
     </main>
-    <div class="container-fluid">
-      <!-- Footer -->
-      <footer class="page-footer font-small teal pt-4">
-      
-                      <!-- Footer Text -->
-               <div class="container-fluid">
-              
-                          <!-- Grid row -->
-              <div class="row">
-              
-                              <!-- Grid column -->
-                  <div class="col-md-4 mt-md-0 mt-4">
-              
-                                  <!-- Content -->
-                                  <h5 class="text-uppercase font-weight-bold">COMO PODEMOS AYUDARTE</h5>
-                                  <a href="#">Trakea tu orden</a> <br>
-                                  <a href="faqs.php">FAQs</a><br>
-                                  <a href="#">Delivery</a>
-                          
-                  </div>
-                              <!-- Grid column -->
-              
-                              <hr class="d-md-none pb-4">
-              
-                              <!-- Grid column -->
-                  <div class="col-md-4 mb-md-0 mb-4">
-              
-                                  <!-- Content -->
-                                  <h5 class="text-uppercase font-weight-bold">CONTACTO</h5>
-                                  <p>TEL | 4786-8907</p>
-                                  <p>MAIL | info@bruna.com</p>
-                                  <p>DIRECCION | Monroe</p>
-                  </div>
-                              <!-- Grid column -->
-                              
-                              <!-- Grid column -->
-                              <div class="col-md-4 mt-md-0 mt-4">
-      
-                                      <!-- Content -->
-                                      <h5 class="text-uppercase font-weight-bold">SOBRE NOSOTROS</h5>
-                                          <a href="#">Nuestra Compañia</a> <br>
-                                          <a href="#">Nosotros</a>
-                              </div>
-      
-                          </div>
-                          </div>
-                          <!-- Grid row -->
-              
-                              </div>
-                      <!-- Footer Text -->
-              
-                      <!-- Copyright -->
-                                              <div class="footer-copyright">© 2019 BRUNA SRL. Todos los derechos reservados.
-                                              </div>
-                      <!-- Copyright -->
-              
-                  </footer>
-                  <!-- Footer -->
-</div>
+    <?php require 'footer.php'; ?>
+    
 
      <!-- MAS ADELANTE INCORPORAREMOS 
      <script>
