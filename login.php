@@ -9,9 +9,8 @@ if($_POST) {
         $result = $db->search($user->getEmail());
         if($result) {
             if($auth->validatePassword($user->getPassword(), $result['password'])){
-                //dd('ENTRE');
                 $auth->login($user->getEmail());
-                redirect('profile.php');
+                redirect('home.php');
             }
         }
     }
