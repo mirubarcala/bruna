@@ -79,3 +79,8 @@
 .login-form form a:hover {
     text-decoration: underline;
 }
+
+.errors {
+  color: red;
+  text-align: center
+}
