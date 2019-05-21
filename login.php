@@ -1,30 +1,6 @@
 <?php
-<<<<<<< HEAD
-include_once("controladores/funciones.php");
-if($_POST){
-  
-  /*$errores = validar($_POST);
-  if(count($errores)===0){*/
-    $usuario = buscarEmail($_POST["email"]);
-    if($usuario ==null){
-      $errores["email"]="Usted no esta registrado";
-    }else {
-      if(password_verify($_POST["password"],$usuario["password"])===false){
-        $errores["password"]= "Datos incorrectos";
-      }
-    }
-
-    crearSesion($usuario,$_POST);
-    if (validarUsuario()){
-      header("location: home.php");
-    }else{
-      header("location: registro.php");
-    }  
-  }
-=======
 
 require 'loader.php';
-
 if($_POST) {
     $user = new User($_POST['email'], $_POST['password']);
     $errors = $validator->validate($user);
@@ -33,12 +9,12 @@ if($_POST) {
         if($result) {
             if($auth->validatePassword($user->getPassword(), $result['password'])){
                 $auth->login($user->getEmail());
-                redirect('home.php');
+                redirect('profile.php');
             }
         }
     }
 }
->>>>>>> Gaby
+
 
 ?>
 

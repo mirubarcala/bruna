@@ -8,7 +8,7 @@
 								<a href="home.php">HOME</a>
 								<a href="#">PRODUCTOS</a>
 								<a href="#">NOSOTROS</a>
-                <a href="#">CONTACTO</a>
+                <a href="#">CONTACTO</a> 
 							</li>
 						</ul>
 						</nav>
@@ -25,8 +25,10 @@
 				<article class="col-12 col-md-12 col-lg-12">
 					<a href="#"><i class="fa fa-heart"></i></a>
 					<a href="#"><i class="fa fa-search"></i></a> 
-					<a href="#"><i class="fa fa-shopping-cart"></i></a> 
-					<a href="login.php"><i class="fa fa-user"></i></a> 
+          <a href="#"><i class="fa fa-shopping-cart"></i></a>
+          
+          <a href="login.php"><i class="fa fa-user"></i></a>
+         
 					
 				</article>
 		</section>
