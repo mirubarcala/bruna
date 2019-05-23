@@ -1,3 +1,9 @@
+<?php
+
+require 'loader.php';
+
+?>
+
 <!DOCTYPE html>
 <html>
 <?php require 'head.php'; ?>
