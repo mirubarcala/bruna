@@ -22,7 +22,7 @@ $user = $_SESSION['email'];
 					<nav>
 						<ul>
 							<li class="links">
-								<a href="home.php">HOME</a>
+								<a href="index.php">HOME</a>
 								<a href="#">PRODUCTOS</a>
 								<a href="#">NOSOTROS</a>
                 <a href="#">CONTACTO</a> 
@@ -34,7 +34,7 @@ $user = $_SESSION['email'];
 			
 
 	   <section class="logo">
-				<a href="home.php"><img src="img/bruna.png"></a>
+				<a href="index.php"><img src="img/bruna.png"></a>
 			</section>
 
 
@@ -44,7 +44,7 @@ $user = $_SESSION['email'];
 					<a href="#"><i class="fa fa-search"></i></a> 
 					<a href="#"><i class="fa fa-shopping-cart"></i></a> 
         <?php if(check()): ?> 
-          <a href="home.php"><i class="fa fa-sign-out"></i></a> 
+          <a href="index.php"><i class="fa fa-sign-out"></i></a> 
        <?php endif; ?> 
 					
 				</article>

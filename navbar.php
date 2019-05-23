@@ -5,7 +5,7 @@
 					<nav>
 						<ul>
 							<li class="links">
-								<a href="home.php">HOME</a>
+								<a href="index.php">HOME</a>
 								<a href="#">PRODUCTOS</a>
 								<a href="#">NOSOTROS</a>
                 <a href="#">CONTACTO</a> 
@@ -17,7 +17,7 @@
 			
 
 	   <section class="logo">
-				<a href="home.php"><img src="img/bruna.png"></a>
+				<a href="index.php"><img src="img/bruna.png"></a>
 			</section>
 
 
