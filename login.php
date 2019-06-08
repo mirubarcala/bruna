@@ -2,8 +2,10 @@
 
 require 'loader.php';
 if($_POST) {
-    $user = new User($_POST['email'], $_POST['password']);
-    $errors = $validator->validate($user);
+        $tipoConexion = "MYSQL";
+    if($tipoConexion=="JSON"){
+        $user = new User($_POST['email'], $_POST['password']);
+        $errors = $validator->validate($user);
     if(count($errors) == 0) {
         $result = $db->search($user->getEmail());
         if($result) {
@@ -13,6 +15,31 @@ if($_POST) {
             }
         }
     }
+} else{
+    
+    $user = new User ($_POST["email"],$_POST["password"]);
+    $errors= $valite ->validateLogin($user);
+    if(count($errors)==0){
+      $userFound = BaseMYSQL::searchEmail($user->getEmail(),$pdo,'users');
+      if($userFound == false){
+        $errors["email"]="Usuario no registrado";
+      }else{
+        if(Autenticador::verifyPassword($user->getPassword(),$userFound ["password"] )!=true){
+          $errors["password"]="Error en los datos verifique";
+        }else{
+          Autenticador::setSession($userFound);
+          if(isset($_POST["recordar"])){
+            Autenticador::setCookie($userFound);
+          }
+          if(Autenticador::validateUser()){
+            redirect("profile.php");
+          }else{
+            redirect("register.php");
+          }
+        }
+      }
+    }
+}
 }
 
 

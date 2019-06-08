@@ -13,6 +13,17 @@ class Auth
         return password_verify($password, $hash);
     }
 
+    static public function validarUsuario(){
+        if(isset($_SESSION["email"])){
+            return true;
+        }elseif (isset($_COOKIE["email"])) {
+            $_SESSION["email"]=$_COOKIE["email"];
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public function logout()
     {
         if(!$_SESSION) {

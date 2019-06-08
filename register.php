@@ -1,20 +1,57 @@
 <?php
-require 'loader.php';
-//Armo array para almacenar errores en el caso de que los haya.
-    $errors = array ();
-//empiezo la validacion del form de registro
-if($_POST){
-    
-  $user = new User( $_POST['email'], $_POST['password']);
-  
-  $errors = $validator->validate($user, $_POST['repassword']);
-  if (count($errors) == 0) {
-    $userArray = $factory->create($user);
-    $db->save($userArray);
-    redirect('login.php');
-  }
+require_once 'loader.php';
 
-}
+    if(isset($_POST)){
+    
+    $tipoConexion = "MYSQL";
+
+    if($tipoConexion=="JSON"){
+              
+        $user = new User ($_POST["id"],$_POST["name"],$_POST["email"],$_POST["phone"],$_POST["password"],$_POST["repassword"], $_FILES );
+  
+        $errors = $validator->validateUser($user, $_POST['repassword']);
+            
+            if(count($errores)==0){
+            $usuarioEncontrado = $json->buscarEmail($usuario->getEmail());
+            
+            if($usuarioEncontrado != null){
+              $errores["email"]="Usuario ya registrado";}}
+  
+        $foundUser = $json->buscarEmail($user->getEmail());
+      
+        if($foundUser != null){
+          $errors["email"]="Usuario ya registrado";
+        }else{
+          $avatar = $register->armarAvatar($user->getAvatar());
+          $registerUser = $register->armarUsuario($user,$avatar);
+        
+          $json->save($registerUser);
+        
+          redirect ("login.php");
+         
+        }
+      }
+    }
+   
+   else{
+   
+    $user = new User($_POST['name'],$_POST['email'],$_POST["phone"],$_POST["password"],$_POST["repassword"], $_FILES );
+    
+    $errors = $validar->validacionUsuario($user, $_POST["repassword"]);
+
+
+    if(count($errors)==0){
+
+      $foundUser = BaseMYSQL::buscarPorEmail($user->getEmail(),$pdo,'clients');
+      if($foundUser != false){
+        $errors["name"]= "Usuario ya Registrado";
+      }else{
+        BaseMYSQL::guardarUsuario($pdo,$user,'clients');
+        redirect ("login.php");
+      }
+    }
+  
+   } 
 
 ?>
 
@@ -41,20 +78,20 @@ if($_POST){
                 <?php endif;?>
 
                 <div class="">
-                    <input type="text" class="form-control" name="name" placeholder="Nombre" required="required" value=""> 
+                    <input type="text" class="form-control" id = "name" name="name" placeholder="Nombre" required="required" value=""> 
                 </div>
                 <br>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="email" placeholder="Email" required="required" value=""> 
+                    <input type="text" class="form-control" id = "email" name="email" placeholder="Email" required="required" value=""> 
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="phone" placeholder="Telefono" required="required" value="">
+                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Telefono" required="required" value="">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" name="password" placeholder="Contraseña" required="required">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required="required">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" name="repassword" placeholder="Confirmar contraseña" required="required">
+                    <input type="password" class="form-control" id="repassword" name="repassword" placeholder="Confirmar contraseña" required="required">
                 </div>        
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-lg btn-block">Registrate</button>

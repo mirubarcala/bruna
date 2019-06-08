@@ -5,6 +5,7 @@ class Validator
     public function validate(User $user, string $cpassword = "")
     {
         $errors = array();
+        $nombre = trim($usuario->getNombre());
 
         if($user->getEmail() == "") {
             $errors['email'] = "El email no es valido";
