@@ -1,19 +1,20 @@
 <?php
 require 'loader.php';
-//Armo array para almacenar errores en el caso de que los haya.
-    $errors = array ();
-//empiezo la validacion del form de registro
-if($_POST){
-    
-  $user = new User( $_POST['email'], $_POST['password']);
-  
-  $errors = $validator->validate($user, $_POST['repassword']);
-  if (count($errors) == 0) {
-    $userArray = $factory->create($user);
-    $db->save($userArray);
-    redirect('login.php');
-  }
-
+$errors = array();
+if($_POST) {
+    $avatar = null;
+    $user = new User($_POST['email'], $_POST['password'], $_POST['phone']);
+    /*if ($_FILES['avatar']) {
+        $avatar = $_FILES;
+        $file = $db->saveAvatar($avatar, $user);
+        $user->setAvatar($file);
+    }*/
+    $errors = $validator->validate($user, $_POST['repassword']);
+    if(count($errors) == 0) {
+        $userArray = $factory->create($user);
+        $db->save($userArray);
+        redirect('login.php');
+    }
 }
 
 ?>
