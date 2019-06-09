@@ -1,32 +1,30 @@
 <?php
+require_once("helpers.php");
+require_once("clases/Usuario.php");
+require_once("clases/Validador.php");
+require_once("clases/ArmarRegistro.php");
+require_once("clases/BaseDatos.php");
+require_once("clases/BaseJSON.php");
+require_once("clases/Encriptar.php");
+require_once("clases/Autenticador.php");
+require_once("clases/BaseMYSQL.php");
+require_once("clases/Query.php");
 
-require 'helpers.php';
-require 'Classes/Validator.php';
-require 'Classes/UserFactory.php';
-require 'Classes/Database.php';
-/*require 'Classes/DBJSON.php';*/
-require 'Classes/DBMySQL.php';
-require 'Classes/HashPassword.php';
-require 'Classes/User.php';
-require 'Classes/Session.php';
-require 'Classes/Auth.php';
-require 'Classes/Cookie.php';
-/*require 'Classes/Product.php';
-require 'Classes/Category.php';
-require 'Classes/Cart.php';*/
 
-Session::start();
-
-$validator = new Validator();
-$factory = new UserFactory();
-
-/*$db = new ('users.json');*/
-
-// PARAMETROS
-$host = "127.0.0.1";
-$port = "3306";
-$db_name = "dbbruna";
-$username = "root";
+//VARIABLES DE CONEXION
+$host = "localhost";
+$bd = "dbbruna";
+$usuario = "root";
 $password = "";
-// END PARAMETROS
-$pdo = DBMySQL::connect($host, $db_name, $username, $password, $port);
+$puerto = "3306";
+$charset = "utf8mb4";
+
+
+$pdo = BaseMYSQL::conexion($host,$bd,$usuario,$password,$puerto,$charset);
+
+
+$validar = new Validador();
+$registro = new ArmarRegistro();
+//$json = new BaseJSON("usuarios.json");
+Autenticador::iniciarSession();
+

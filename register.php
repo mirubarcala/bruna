@@ -1,21 +1,53 @@
 <?php
 require 'loader.php';
-$errors = array();
-if($_POST) {
-    $avatar = null;
-    $user = new User($_POST['email'], $_POST['password'], $_POST['phone']);
-    /*if ($_FILES['avatar']) {
-        $avatar = $_FILES;
-        $file = $db->saveAvatar($avatar, $user);
-        $user->setAvatar($file);
-    }*/
-    $errors = $validator->validate($user, $_POST['repassword']);
-    if(count($errors) == 0) {
-        $userArray = $factory->create($user);
-        $db->save($userArray);
-        redirect('login.php');
+if ($_POST){
+    
+    $tipoConexion = "MYSQL";
+    
+    if($tipoConexion=="JSON"){
+      $usuario = new Usuario($_POST["email"],$_POST["password"],$_POST["repassword"],$_POST["nombre"],$_FILES );
+    
+      $errores = $validar->validacionUsuario($usuario, $_POST["repassword"]);
+      
+      if(count($errores)==0){
+        $usuarioEncontrado = $json->buscarEmail($usuario->getEmail());
+        
+        if($usuarioEncontrado != null){
+          $errores["email"]="Usuario ya registrado";
+        }else{
+          $avatar = $registro->armarAvatar($usuario->getAvatar());
+          $registroUsuario = $registro->armarUsuario($usuario,$avatar);
+        
+          $json->guardar($registroUsuario);
+        
+          redirect ("login.php");
+        }
+      }
     }
-}
+   else{
+     
+    $usuario = new Usuario($_POST["email"],$_POST["password"],$_POST["repassword"],$_POST["nombre"],$_FILES );
+    
+    $errores = $validar->validacionUsuario($usuario, $_POST["repassword"]);
+    
+    if(count($errores)==0){
+      
+      $usuarioEncontrado = BaseMYSQL::buscarPorEmail($usuario->getEmail(),$pdo,'users');
+      if($usuarioEncontrado != false){
+        $errores["email"]= "Usuario ya Registrado";
+      }else{
+        
+        $avatar = $registro->armarAvatar($usuario->getAvatar());
+        
+        BaseMYSQL::guardarUsuario($pdo,$usuario,'users',$avatar);
+       
+        redirect ("login.php");
+      }
+    }
+  
+   } 
+  }
+  
 
 ?>
 
@@ -35,14 +67,8 @@ if($_POST) {
                 </div>
                 <h2 class="text-center"> REGISTRO </h2>
 
-                <?php if(count($errors) > 0):?>
-                  <?php foreach($errors as $error): ?>
-                  <p class="errors"> <?=$error ?></p>
-                  <?php endforeach;?>
-                <?php endif;?>
-
                 <div class="">
-                    <input type="text" class="form-control" name="name" placeholder="Nombre" required="required" value=""> 
+                    <input type="text" class="form-control" name="nombre" placeholder="Nombre" required="required" value=""> 
                 </div>
                 <br>
                 <div class="form-group">

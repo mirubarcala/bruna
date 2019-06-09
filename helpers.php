@@ -1,29 +1,21 @@
 <?php
-
-function dump($param)
-{
-    echo '<pre>';
-    var_dump($param);
-    echo '</pre>';
+function dd($valor){
+    echo "<pre>";
+        var_dump($valor);
+        exit;
+    echo "</pre>";
 }
-
-function dd($param)
-{
-    die(dump($param));
+function inputUsuario($campo){
+    if(isset($_POST[$campo])){
+        return $_POST[$campo];
+    }
 }
-
-function redirect($location)
-{
-    header('Location:' . $location);
+function redirect($destino){
+    header("location:".$destino);
     exit;
 }
 
-function check()
-{
-    return isset($_SESSION['email']);
-}
 
-function guest()
-{
-    return !check();
-}
+
+
+ ?>

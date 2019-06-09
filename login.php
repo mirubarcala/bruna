@@ -1,22 +1,59 @@
 <?php
 
-require 'loader.php';
-if($_POST) {
-    $user = new User($_POST['email'], $_POST['password']);
-    $errors = $validator->validate($user);
-    if(count($errors) == 0) {
-        $result = $db->search($user->getEmail());
-        if($result) {
-            if($auth->validatePassword($user->getPassword(), $result['password'])){
-                $auth->login($user->getEmail());
-                redirect('profile.php');
+require_once 'loader.php';
+if($_POST){
+    $tipoConexion = "MYSQL";
+    if($tipoConexion=="JSON"){
+        $usuario = new Usuario($_POST["email"],$_POST["password"]);
+        $errores= $validar->validacionLogin($usuario);
+        if(count($errores)==0){
+        
+          $usuarioEncontrado = $json->buscarPorEmail($usuario->getEmail());
+          if($usuarioEncontrado == null){
+            $errores["email"]="El usuario no existe";
+          }else{
+            if(Autenticador::verificarPassword($usuario->getPassword(),$usuarioEncontrado["password"] )!=true){
+              $errores["password"]="Error de datos. Verificar";
+            }else{
+              Autenticador::seteoSesion($usuarioEncontrado);
+              if(isset($_POST["recordar"])){
+                Autenticador::seteoCookie($usuarioEncontrado);
+              }
+              if(Autenticador::validarUsuario()){
+                redirect("profile.php");
+              }else{
+                redirect("register.php");
+              }
             }
+          }
+        }
+    }else{
+      
+        $usuario = new Usuario($_POST["email"],$_POST["password"]);
+        $errores= $validar->validacionLogin($usuario);
+        if(count($errores)==0){
+          $usuarioEncontrado = BaseMYSQL::buscarPorEmail($usuario->getEmail(),$pdo,'users');
+          if($usuarioEncontrado == false){
+            $errores["email"]="Usuario no registrado";
+          }else{
+            if(Autenticador::verificarPassword($usuario->getPassword(),$usuarioEncontrado["password"] )!=true){
+              $errores["password"]="Error de datos. Verificar";
+            }else{
+              Autenticador::seteoSesion($usuarioEncontrado);
+              if(isset($_POST["recordar"])){
+                Autenticador::seteoCookie($usuarioEncontrado);
+              }
+              if(Autenticador::validarUsuario()){
+                redirect("profile.php");
+              }else{
+                redirect("register.php");
+              }
+            }
+          }
         }
     }
-}
-
-
-?>
+  }
+  ?>
 
 
 <!DOCTYPE html>

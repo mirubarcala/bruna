@@ -1,12 +1,10 @@
 <?php
-require 'loader.php';
+require_once 'loader.php';
 
-if(guest()) {
-    redirect('login.php');
+
+if(!isset($_SESSION["email"])) {
+    redirect("register.php");
 }
-
-$user = $_SESSION['email'];
-
 ?>
 
 
