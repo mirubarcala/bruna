@@ -326,3 +326,43 @@ li a:hover {
   font-size: 2rem;
   font-weight: bolder
 }
+
+/* carrito */
+
+.principalcarrito {
+  background-color: #8b8e94;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+
+}
+.seccion1carrito {
+  margin-top: -30px;
+  max-width: 1200px;
+  justify-content: center;
+
+}
+.articulo1carrito {
+  margin: 10px;
+  overflow: hidden;
+  height: 30em;
+}
+.img-articulo1carrito {
+  height: 15em;
+}
+.titulocarrito {
+  font-size: 1.5em;
+  color: #000; 
+  font-weight: bold;    
+}
+.detallecarrito {
+  font-size: 0.7em;
+  color: #8b8e94;
+  font-weight: bold;
+  
+}
+.preciocarrito {
+  font-size: 2em;
+  color: #FFA33E;
+  font-weight: bold;
+}

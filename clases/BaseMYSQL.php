@@ -13,9 +13,9 @@ class BaseMYSQL extends BaseDatos{
         }
     }
     static public function buscarPorEmail($email,$pdo,$tabla){
-        
+
         $sql = "select * from $tabla where email = :email";
-        
+
         $query = $pdo->prepare($sql);
         $query->bindValue(':email',$email);
         $query->execute();
@@ -34,7 +34,7 @@ class BaseMYSQL extends BaseDatos{
         $query->execute();
 
     }
-  
+
     public function leer(){
         //
     }
@@ -48,4 +48,4 @@ class BaseMYSQL extends BaseDatos{
         //
     }
 
-} 
+}

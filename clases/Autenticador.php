@@ -9,7 +9,7 @@ class Autenticador{
         return password_verify($password,$passwordHash);
     }
     static public function seteoSesion($user){
-        
+
         $_SESSION["name"]=$user["name"];
         $_SESSION["email"] = $user["email"];
         $_SESSION["role"]= $user["role"];
@@ -30,4 +30,3 @@ class Autenticador{
         }
     }
 }
-

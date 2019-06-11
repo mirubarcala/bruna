@@ -6,7 +6,7 @@
 						<ul>
 							<li class="links">
 								<a href="index.php">HOME</a>
-								<a href="#">PRODUCTOS</a>
+								<a href="carrito.php">PRODUCTOS</a>
 								<a href="#">NOSOTROS</a>
                 <a href="#">CONTACTO</a> 
 							</li>

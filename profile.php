@@ -11,6 +11,7 @@ if(!isset($_SESSION["email"])) {
 <!DOCTYPE html>
 <html lang="en">
 <?php require 'head.php';?>
+
 <body>
 <header>
 <section class="container">
@@ -41,9 +42,9 @@ if(!isset($_SESSION["email"])) {
 					<a href="#"><i class="fa fa-heart"></i></a>
 					<a href="#"><i class="fa fa-search"></i></a> 
 					<a href="#"><i class="fa fa-shopping-cart"></i></a> 
-        <?php if(check()): ?> 
-          <a href="index.php"><i class="fa fa-sign-out"></i></a> 
-       <?php endif; ?> 
+        <!--<?php if(check()): ?>-->
+          <a href="carrito.php"><i class="fa fa-sign-out"></i></a> 
+       	<!--<?php endif; ?>-->
 					
 				</article>
 		</section>

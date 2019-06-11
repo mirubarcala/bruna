@@ -7,7 +7,7 @@ if($_POST){
         $usuario = new Usuario($_POST["email"],$_POST["password"]);
         $errores= $validar->validacionLogin($usuario);
         if(count($errores)==0){
-        
+
           $usuarioEncontrado = $json->buscarPorEmail($usuario->getEmail());
           if($usuarioEncontrado == null){
             $errores["email"]="El usuario no existe";
@@ -28,7 +28,7 @@ if($_POST){
           }
         }
     }else{
-      
+
         $usuario = new Usuario($_POST["email"],$_POST["password"]);
         $errores= $validar->validacionLogin($usuario);
         if(count($errores)==0){
@@ -36,8 +36,11 @@ if($_POST){
           if($usuarioEncontrado == false){
             $errores["email"]="Usuario no registrado";
           }else{
+
+            //pasar esta validacion en el autenticador y crear que la funcion password_verify
             if(Autenticador::verificarPassword($usuario->getPassword(),$usuarioEncontrado["password"] )!=true){
               $errores["password"]="Error de datos. Verificar";
+
             }else{
               Autenticador::seteoSesion($usuarioEncontrado);
               if(isset($_POST["recordar"])){
@@ -62,22 +65,32 @@ if($_POST){
 <body>
 
 <header>
-<?php require 'navbar.php'; ?>	
+<?php require 'navbar.php'; ?>
 </header>
 
 <main>
+<?php
+      if(isset($errores)):?>
+        <ul class="alert alert-danger">
+          <?php
+          foreach ($errores as $key => $value) :?>
+            <li> <?=$value;?> </li>
+            <?php endforeach;?>
+        </ul>
+      <?php endif;?>
+
             <div id="faqs" class="login-form">
                     <form action="" method="post">
                         <div class="avatar">
                             <img src="img/User-Profile.png" alt="Avatar">
                         </div>
-                        <h2 class="text-center"> LOGIN</h2>   
+                        <h2 class="text-center"> LOGIN</h2>
                         <div class="form-group">
                             <input type="text" class="form-control" name="email" placeholder="Email" required="required">
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" name="password" placeholder="Contraseña" required="required">
-                        </div>        
+                        </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-lg btn-block">Logeate</button>
                         </div>
@@ -92,6 +105,6 @@ if($_POST){
 
 </main>
 
-<?php require 'footer.php'; ?>   
-            
+<?php require 'footer.php'; ?>
+
 </body>
